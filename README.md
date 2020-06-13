@@ -37,8 +37,10 @@ Just the total distance walked for a given itinerary.
 
 I just kept it simple. There's a history and a slider to allow for replaying.
 
-![Initial](images/initial_state.png)
-![Final](images/final_state.png)
+<p float="left">
+    <img src="images/initial_state.png" alt="Initial" width="300px" />
+    <img src="images/final_state.png" alt="Final" width="300px" />
+</p>
 
 ## Improvements
 
