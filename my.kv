@@ -1,0 +1,23 @@
+# kivy 2.0
+<MyWidget>
+    canvas:
+        Color:
+            rgba: .5, .5, .5, .5
+        Line:
+            points: [item for sublist in self.nodes for item in sublist]
+            width: 10.0
+            cap: 'round'
+            joint: 'round'
+            close: True
+    Label:
+        id: energy_label
+        center: 100, 200
+    Slider:
+        id: slider
+        min: 0
+        max: 100
+        width: 1000
+        disabled: True
+        step: 1
+        orientation: 'horizontal'
+        center: 500, 50
