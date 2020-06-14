@@ -107,11 +107,11 @@ class TravelingSalesman(SimulatedAnnealing[Nodes]):
         return int(total_distance)
 
 
-class MyWidget(Widget):
+class SimulatedAnnealingWidget(Widget):
     nodes = ListProperty()
 
     def __init__(self, **kwargs):
-        super(MyWidget, self).__init__(**kwargs)
+        super(SimulatedAnnealingWidget, self).__init__(**kwargs)
         self.salesman = TravelingSalesman(
             generate_cities(Window.system_size[0] * Metrics.density, Window.system_size[1] * Metrics.density, 20),
             k_max=2000, t_max=200
@@ -140,9 +140,9 @@ class MyWidget(Widget):
         self.ids.energy_label.text = f'{int(slider.value)} => {str(self.salesman.energy(self.nodes))}'
 
 
-class MyApp(App):
+class SimulatedAnnealingApp(App):
     def build(self):
-        return MyWidget()
+        return SimulatedAnnealingWidget()
 
 
 def generate_cities(width, height, nodes):
@@ -150,7 +150,7 @@ def generate_cities(width, height, nodes):
 
 
 def main():
-    MyApp().run()
+    SimulatedAnnealingApp().run()
 
 
 if __name__ == '__main__':
