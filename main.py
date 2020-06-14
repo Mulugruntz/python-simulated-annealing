@@ -121,7 +121,11 @@ class SimulatedAnnealingWidget(Widget):
         self.ids.slider.max = len(self.salesman.history) - 1
         self.ids.slider.bind(on_touch_move=self.cb_slider_on_touch_move)
         self.salesman_callback = iter(self.salesman.history)
-        self.event_clock_callback = Clock.schedule_interval(self.callback_next_state, 1 / 100.)
+        self.event_clock_callback = None
+        Clock.schedule_once(self.start_delayed_process, 2)
+
+    def start_delayed_process(self, dt):
+        self.event_clock_callback = Clock.schedule_interval(self.callback_next_state, 1 / 50.)
 
     def callback_next_state(self, dt):
         try:
